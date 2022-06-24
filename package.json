@@ -9,6 +9,11 @@
     },
     "scripts": {
         "build": "tsc --build",
-        "start": "yarn build && node dist/index.js"
+        "start": "yarn build && node dist/index.js",
+        "dev"  : "yarn nodemon src/index.ts"
+    },
+    "dependencies": {
+        "nodemon": "^2.0.18",
+        "ts-node": "^10.8.1"
     }
 }

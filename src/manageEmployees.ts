@@ -1,7 +1,22 @@
+import employeesObject from './employees.json'
+
+
 class TreeNode {
-    constructor(value = null) {
-        this.value = value
-        this.descendants = []
+    public name: string;
+    public jobTitle: string;
+    public boss: string;
+    private salary: number; // todo: is private okay here?
+
+    public descendants: TreeNode[];
+    
+    // todo: should boss be a TreeNode or a string?
+    constructor(name: string, jobTitle: string, boss: string, salary: number) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.boss = boss;
+        this.salary = salary;
+        
+        this.descendants = [];
     }
 }
 
@@ -41,7 +56,9 @@ function fireEmployee() {}
  * @param {string} employeeName
  * @returns {void}
  */
-function promoteEmployee() {}
+function promoteEmployee() {
+    console.log("promote employee function")
+}
 
 /**
  * Demotes an employee one level below their current ranking.
@@ -53,3 +70,7 @@ function promoteEmployee() {}
  * @returns {void}
  */
 function demoteEmployee() {}
+
+
+
+export { generateCompanyStructure, hireEmployee, fireEmployee, promoteEmployee, demoteEmployee }
